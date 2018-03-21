@@ -1,4 +1,4 @@
 #!
 
-. ./local_environment.sh
+. ./environment.sh
 python data_import.py
