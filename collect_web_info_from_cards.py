@@ -22,10 +22,10 @@ class CardStyleDealsPage(object):
         return ''.join(stripped)
 
     def _get_web_driver(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('headless')
-        options.add_argument('window-size=1200x600')
-        self.driver = webdriver.Chrome(chrome_options=options)
+        # options = webdriver.ChromeOptions()
+        # options.add_argument('headless')
+        # options.add_argument('window-size=1200x600')
+        self.driver = webdriver.PhantomJS()
         self.driver.implicitly_wait(60)
         self.driver.maximize_window()
 
