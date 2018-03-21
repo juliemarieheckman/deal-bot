@@ -1,0 +1,5 @@
+export DB_HOST="localhost"
+export DB_PASS=""
+export DB_USER="julie"
+export DB_PORT=""
+export DB_NAME="deals"
