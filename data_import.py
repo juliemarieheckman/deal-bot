@@ -20,7 +20,7 @@ def build_where_clause(deal_source):
     return OPEN_OFFERS_WHERE_CLAUSE.format(deal_source = deal_source)
 
 def get_database_connection():
-    connection_string = "dbname='{}' user='{}' host='{}' password='{}".format(environ['DB_NAME'], environ['DB_USER'], environ['DB_HOST'], environ['DB_PASS'])
+    connection_string = "dbname='{}' user='{}' host='{}' password='{}'".format(environ['DB_NAME'], environ['DB_USER'], environ['DB_HOST'], environ['DB_PASS'])
     print connection_string
     conn = psycopg2.connect(connection_string, cursor_factory=NamedTupleCursor)
     conn.autocommit = True
