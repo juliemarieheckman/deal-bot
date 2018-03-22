@@ -3,7 +3,7 @@ import time
 from datetime import date
 
 SCROLL_COUNT = 10
-SCROLL_PAUSE_TIME = 1.0
+SCROLL_PAUSE_TIME = 5.0
 
 class CardStyleDealsPage(object):
 
@@ -22,10 +22,12 @@ class CardStyleDealsPage(object):
         return ''.join(stripped)
 
     def _get_web_driver(self):
-        # options = webdriver.ChromeOptions()
-        # options.add_argument('headless')
-        # options.add_argument('window-size=1200x600')
-        self.driver = webdriver.PhantomJS()
+        options = webdriver.ChromeOptions()
+        options.add_argument('headless')
+        options.add_argument('window-size=1200x600')
+        self.driver = webdriver.Chrome(chrome_options=options)
+        # self.driver = webdriver.PhantomJS()
+        # self.driver.set_window_size(1400, 1000)
         self.driver.implicitly_wait(60)
         self.driver.maximize_window()
 
@@ -59,6 +61,7 @@ class CardStyleDealsPage(object):
 
             last_height = h
             print 'scrolling to new height: {}'.format(h)
+            print 'scroll count {}'.format(scroll_count_same)
 
         element = self.driver.find_element_by_class_name(self.offer_section)
         offer_cards = element.find_elements_by_class_name(self.data_section)

@@ -29,7 +29,8 @@ def get_database_connection():
 
 def load_file_to_database(db_cxn):
     sql = "COPY deal_items FROM '{}';".format(COPY_OFFER_FILE_NAME)
-    db_cxn.execute(sql)
+    copy_file = open(COPY_OFFER_FILE_NAME)
+    db_cxn.copy_from(copy_file, 'deal_items', columns=['source', 'start_dt', 'end_dt', 'item', 'value', 'details'])
 
 def merge_new_to_open_offers(current_open, newly_found, offer_date, offer_source):
     merged_offer_set = []
@@ -84,7 +85,9 @@ def query_for_open_offers(db_cxn, deal_source):
             deal_items
         {}
     """.format(where_clause)
+    print sql
     db_cxn.execute(sql)
+    print db_cxn
     rows = []
     if db_cxn.rowcount > 0:
         rows = db_cxn.fetchall()

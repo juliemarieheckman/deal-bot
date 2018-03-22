@@ -32,8 +32,6 @@ class Cartwheel(CardStyleDealsPage):
         self.data_section = 'offer-card-data'
         self.offer_section = 'ng-scope'
         self.deal_source = 'cartwheel'
-        self.scroll_pause_time = 10
-        self.scroll_count = 1
 
     def _parse_offer_row(self, offer_row):
         deal = self._strip_non_ascii(offer_row[2])
