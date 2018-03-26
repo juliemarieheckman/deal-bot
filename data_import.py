@@ -1,4 +1,7 @@
 #! /usr/bin/python
+
+
+#TODO: Add logging statements in
 import csv
 import psycopg2
 from psycopg2.extras import NamedTupleCursor

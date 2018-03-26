@@ -23,9 +23,16 @@ class CardStyleDealsPage(object):
 
     def _get_web_driver(self):
         options = webdriver.ChromeOptions()
+        options.binary_location = '/opt/google/chrome/google-chrome'
         options.add_argument('headless')
         options.add_argument('window-size=1200x600')
-        self.driver = webdriver.Chrome(chrome_options=options)
+        service_log_path = "/var/log/chromedriver.log"
+        service_args = ['--verbose']
+        self.driver = webdriver.Chrome('/opt/chrome/chromedriver',
+                                  chrome_options=options,
+                                  service_args=service_args,
+                                  service_log_path=service_log_path)
+
         # self.driver = webdriver.PhantomJS()
         # self.driver.set_window_size(1400, 1000)
         self.driver.implicitly_wait(60)

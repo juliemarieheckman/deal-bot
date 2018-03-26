@@ -3,7 +3,7 @@ CREATE TABLE deal_items (
     source varchar,
     start_dt date,
     end_dt date,
-    item varchar,
     value varchar,
+    item varchar,
     details varchar
 );
