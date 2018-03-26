@@ -26,7 +26,7 @@ class CardStyleDealsPage(object):
         options.binary_location = '/opt/google/chrome/google-chrome'
         options.add_argument('headless')
         options.add_argument('window-size=1200x600')
-        service_log_path = "/var/log/chromedriver.log"
+        service_log_path = "chromedriver.log"
         service_args = ['--verbose']
         self.driver = webdriver.Chrome('/opt/chrome/chromedriver',
                                   chrome_options=options,
