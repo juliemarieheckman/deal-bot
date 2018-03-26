@@ -75,7 +75,7 @@ class CardStyleDealsPage(object):
         for offer in offer_cards:
             o = offer.text.split('\n')
             parsed_data = self._parse_offer_row(o)
-            offers.write('{}|{}|{}|{}\n'.format(date.today(), parsed_data['deal'], parsed_data['item'], parsed_data['details']))
+            offers.write('{}|{}|{}|{}\n'.format(date.today(), parsed_data['item'], parsed_data['deal'], parsed_data['details']))
 
     def _parse_offer_row(self, offer_row):
         raise NotImplementedError
