@@ -1,0 +1,3 @@
+
+
+27 3 * * * * ec2-user /opt/deal-bot/start.sh
