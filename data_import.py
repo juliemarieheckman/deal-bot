@@ -132,6 +132,6 @@ def do_specific(deal_site):
 
 
 # do_specific('coupons.com')
-do_specific('cartwheel')
+# do_specific('cartwheel')
 # do_specific('ibotta')
-# do_all()
+do_all()
