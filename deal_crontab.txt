@@ -1,3 +1,4 @@
 
 
-27 3 * * * * ec2-user /opt/deal-bot/start.sh
+27 3 * * * * ec2-user /opt/deal-bot/start.sh data_import.py
+27 7 * * * * ec2-user /opt/deal-bot/start.sh deal_notification.py
